@@ -1,0 +1,23 @@
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  min-height: 24px;
+  border-bottom: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.pageTitle {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.headerAction {
+  display: flex;
+  align-items: center;
+}

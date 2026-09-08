@@ -1,0 +1,145 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-app);
+  padding: 12px 8px;
+  width: 152px;
+  transition: width var(--duration-sidebar) var(--ease-sidebar);
+  will-change: width;
+  overflow: hidden;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.expanded {
+  width: 152px;
+}
+
+.collapsed {
+  width: 52px;
+  align-items: center;
+  padding: 12px 6px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0 4px;
+  height: 30px;
+  width: 100%;
+}
+
+.collapsed .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 14px;
+  padding: 0;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 26px;
+  padding-left: 2px;
+  flex-shrink: 0;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  list-style: none;
+  flex: 1;
+  width: 100%;
+}
+
+.navItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  align-items: center;
+  justify-items: start;
+  width: 100%;
+  gap: 8px;
+  padding: 0 8px;
+  height: 34px;
+  min-height: 34px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text-secondary);
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.collapsed .navItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 0;
+  width: 38px;
+  height: 34px;
+}
+
+.navItem:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.navItem:focus {
+  outline: none;
+}
+
+.navItem:focus-visible {
+  outline: none;
+  background: var(--bg-hover);
+}
+
+.navItem.active {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-weight: 500;
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.navLabel {
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding: 8px 4px 0;
+  width: 100%;
+}
+
+.collapsed .footer {
+  justify-content: center;
+  padding: 8px 0 0;
+}

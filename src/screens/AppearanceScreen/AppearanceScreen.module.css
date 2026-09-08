@@ -1,0 +1,213 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background: var(--bg-app);
+  padding: 16px 18px;
+}
+
+.settingsBody {
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: 18px;
+  border-bottom: none;
+  gap: 6px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+}
+
+.sectionHeaderBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 220px;
+  min-width: 220px;
+  flex-shrink: 0;
+}
+
+/* Schedule Rows: 42-44px */
+.scheduleRows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: opacity 0.15s ease;
+}
+
+.scheduleRows.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.scheduleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 42px;
+  min-height: 42px;
+  padding: 0;
+}
+
+.scheduleLabelArea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.scheduleIcon {
+  color: var(--text-secondary);
+}
+
+
+/* Wallpaper Rows: 42-44px */
+.wallpaperRows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: opacity 0.15s ease;
+}
+
+.wallpaperRows.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.wallpaperRow {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  min-height: 42px;
+  padding: 0;
+}
+
+.wallpaperLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  width: 108px;
+  min-width: 108px;
+  max-width: 108px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.wallpaperPreviewBox {
+  width: 40px;
+  min-width: 40px;
+  height: 28px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-card);
+  border: 1px solid var(--border-app);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.wallpaperPreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wallpaperInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+  margin-right: 16px;
+}
+
+.wallpaperName {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wallpaperErr {
+  font-size: 11px;
+  color: var(--danger, #EF4444);
+}
+
+.wallpaperActions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 110px;
+  min-width: 110px;
+}
+
+.pickBtn {
+  width: 110px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-app);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 12.5px;
+  font-weight: 500;
+  height: 32px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.pickBtn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--border-focus);
+}
+
+.pickBtn:focus {
+  outline: none;
+}
+
+.pickBtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}

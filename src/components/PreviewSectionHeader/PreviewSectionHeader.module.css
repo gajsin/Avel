@@ -1,0 +1,49 @@
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  min-height: 32px;
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  transition: background 0.12s ease;
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+.previewHeader:hover {
+  background: var(--bg-hover);
+}
+
+.previewHeader:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.previewCardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.previewChevronBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+  transition: color 0.15s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.previewChevronBtn.expanded {
+  transform: rotate(180deg);
+}
+
+.previewHeader:hover .previewChevronBtn {
+  color: var(--text-primary);
+}

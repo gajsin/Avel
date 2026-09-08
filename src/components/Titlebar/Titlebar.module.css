@@ -1,0 +1,45 @@
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--titlebar-height);
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 8px 0 12px;
+  user-select: none;
+  z-index: 100;
+  -webkit-app-region: drag;
+}
+
+.dragRegion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  height: 100%;
+}
+
+.windowControls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  -webkit-app-region: no-drag;
+}
+
+.controlBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.controlBtn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.closeBtn:hover {
+  background-color: var(--danger);
+  color: #FFFFFF;
+}

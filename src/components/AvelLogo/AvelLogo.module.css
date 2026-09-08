@@ -1,0 +1,8 @@
+.logoImg {
+  display: block;
+  height: 22px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  user-select: none;
+}

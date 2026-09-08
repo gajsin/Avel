@@ -1,0 +1,527 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-app);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 18px 6px;
+}
+
+
+.contentArea {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.listWrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.listWrapper.hasBulkBar {
+  padding-bottom: 96px;
+}
+
+.gridListWrapper {
+  padding: 12px 18px;
+}
+
+.gridListWrapper.hasBulkBar {
+  padding-bottom: 96px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.thumbBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-hover);
+  flex-shrink: 0;
+  border: 1px solid var(--border-subtle);
+}
+
+.containImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--bg-hover);
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.typeBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.badgeText {
+  background: var(--icon-text-bg);
+  color: var(--icon-text-fg);
+}
+
+.badgeLink {
+  background: var(--icon-link-bg);
+  color: var(--icon-link-fg);
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+  transition: opacity 0.12s ease, background 0.12s ease, color 0.12s ease;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.table tr:hover .menuBtn,
+.table tr.selected .menuBtn,
+.table tr:focus-within .menuBtn,
+.menuBtn:focus,
+.menuBtn:focus-visible {
+  opacity: 1;
+}
+
+.menuBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Grid Mode */
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gridCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-app);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 170px 160px;
+}
+
+.gridCard:hover {
+  border-color: var(--border-active);
+  transform: none;
+  box-shadow: none;
+}
+
+.gridCard.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+  background: var(--bg-row-selected);
+}
+
+.gridCardCheckBtn {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-xs);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-app);
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.12s ease, background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+[data-theme='dark'] .gridCardCheckBtn {
+  background: rgba(30, 34, 40, 0.9);
+  border-color: var(--border-app);
+}
+
+.gridCard:hover .gridCardCheckBtn,
+.gridCard:focus-within .gridCardCheckBtn {
+  opacity: 1;
+}
+
+.gridCardCheckBtn:hover {
+  border-color: var(--border-focus);
+}
+
+.gridCardCheckBtn.checked {
+  opacity: 1 !important;
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+.gridThumbArea {
+  position: relative;
+  width: 100%;
+  height: 94px;
+  background: var(--bg-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gridContainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--bg-hover);
+}
+
+.gridCoverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gridTextPreview {
+  width: 100%;
+  height: 100%;
+  padding: 8px 10px;
+  background: var(--surface-muted);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.gridTextSnippet {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 15px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  white-space: pre-wrap;
+  user-select: none;
+  margin: 0;
+}
+
+.gridCardActions {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 5;
+}
+
+.gridCard:hover .gridCardActions,
+.gridCard:focus-within .gridCardActions {
+  opacity: 1;
+}
+
+.gridActionBtn {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: var(--radius-xs);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border-app);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+[data-theme='dark'] .gridActionBtn {
+  background: rgba(24, 27, 32, 0.94);
+  border-color: var(--border-app);
+  color: var(--text-secondary);
+}
+
+.gridActionBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-focus);
+}
+
+.gridInfo {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-height: 44px;
+}
+
+.gridInfoText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.gridMetaLeft {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gridMetaRight {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.gridImageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.gridImageTitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.gridSub {
+  font-size: 11px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Details Table Mode */
+.tableContainer {
+  width: 100%;
+  overflow-x: hidden;
+  border: 1px solid var(--border-app);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+}
+
+.table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-divider);
+  background: var(--bg-card-subtle);
+  user-select: none;
+}
+
+.table tr {
+  height: 46px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.table td {
+  height: 46px;
+  padding: 0 12px;
+  border-bottom: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: var(--bg-row-hover);
+}
+
+.table tr.selected td {
+  background: var(--bg-row-selected);
+}
+
+.tableCheckBtn {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-app);
+  background: var(--bg-card);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.12s ease;
+  margin: 0 auto;
+}
+
+.tableCheckBtn:hover {
+  border-color: var(--border-focus);
+}
+
+.tableCheckBtn.checked {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.tableCheckBtn.indeterminate {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.indeterminateDash {
+  width: 8px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+.tableNameCell {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tableNameText {
+  display: block;
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tableTypeCell {
+  width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tableTypeText {
+  display: block;
+  color: var(--text-muted);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tableTimeCell {
+  width: 90px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tableTimeText {
+  display: block;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tableTrailingCell {
+  width: 96px;
+  text-align: right;
+  padding-right: 8px;
+}
+
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #ffffff;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform var(--duration-fast) var(--ease-out);
+}
+
+.btnPrimary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.tableActionCell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}
+
+

@@ -1,0 +1,115 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background: var(--bg-app);
+  padding: 16px 18px;
+  gap: 0;
+}
+
+.settingsBody {
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: 24px;
+  border-bottom: none;
+  gap: 4px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.settingsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 42px;
+  min-height: 42px;
+  padding: 0;
+}
+
+.settingsRowTabs {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  min-height: 42px;
+  padding: 0;
+}
+
+.rowLabelTabs {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text-secondary);
+  width: 200px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.rowLabel {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text-secondary);
+}
+
+/* Hotkey Table */
+.hotkeyTable {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Minimal Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 8px 0;
+  margin-top: auto;
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.githubLink:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.versionText {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-muted);
+}

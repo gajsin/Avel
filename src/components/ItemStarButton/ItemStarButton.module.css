@@ -1,0 +1,32 @@
+@keyframes starPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.35) rotate(15deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.starBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.starBtn:hover {
+  color: #F59E0B !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+}
+
+.starBtn.starred {
+  color: #F59E0B !important;
+}
+
+.starBtn.animating {
+  animation: starPulse 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}

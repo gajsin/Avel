@@ -1,0 +1,107 @@
+.hotkeyRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 42px;
+  min-height: 42px;
+  padding: 0;
+}
+
+.hotkeyLabelCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hotkeyActionName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.hotkeyErrorText {
+  font-size: 11px;
+  color: var(--danger, #EF4444);
+}
+
+.hotkeyBadgeArea {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px; /* visual gap between shortcut control and pencil ~8-10px */
+  flex-shrink: 0;
+}
+
+.kbdBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
+  height: 28px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-app);
+  border-radius: var(--radius-sm);
+  padding: 0 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recordingBadge {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  animation: pulse 1.2s infinite;
+}
+
+.errorBadge {
+  border-color: var(--danger, #EF4444);
+  color: var(--danger, #EF4444);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.btnEditHotkey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  min-width: 28px;
+  max-width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  transition: background 0.12s ease, color 0.12s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.btnEditHotkey:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.btnEditHotkey:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btnEditHotkey.recording {
+  background: var(--danger-surface);
+  color: var(--danger);
+}

@@ -1,0 +1,34 @@
+.viewModeGroup {
+  display: flex;
+  align-items: center;
+  background: var(--bg-segmented);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  gap: 3px;
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+  transition: all 0.12s ease;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.viewBtn:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.viewBtn.active {
+  background: var(--bg-segmented-active);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}

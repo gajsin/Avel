@@ -1,0 +1,30 @@
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+  border: none;
+  background: transparent;
+  transition: background var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.toggleBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.toggleBtn:active {
+  transform: scale(0.95);
+}
+
+.toggleBtn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

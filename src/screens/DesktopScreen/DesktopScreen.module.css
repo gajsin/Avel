@@ -1,0 +1,294 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background: var(--bg-app);
+  padding: 16px 18px;
+  gap: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: 24px;
+  border-bottom: none;
+  gap: 6px;
+}
+
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.radioList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.radioItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--text-primary);
+  height: 30px;
+  min-height: 30px;
+  transition: opacity 0.15s ease, transform var(--duration-fast) var(--ease-out);
+  padding: 0;
+}
+
+.radioItem:active:not(.disabled) {
+  transform: scale(0.985);
+}
+
+.radioItem.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.customRadio {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-app);
+  display: grid;
+  place-items: center;
+  transition: border-color var(--duration-fast) var(--ease-out);
+  flex-shrink: 0;
+  background: var(--surface);
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.radioItem:hover .customRadio {
+  border-color: var(--accent);
+}
+
+.radioItem.active .customRadio {
+  border-color: var(--accent);
+}
+
+.radioDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-sizing: border-box;
+  animation: radioDotPop 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes radioDotPop {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Example Showcase (Surface Card - Attio: card only when content has visual context) */
+.previewCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border-app);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  gap: 12px;
+}
+
+
+.previewGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.previewCol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.previewLabel {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.previewMockup {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-app);
+  background: #020617;
+}
+
+/* Mockup Layers */
+.mockupContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  user-select: none;
+}
+
+.mockupWallpaper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.iconsOverlay {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.desktopIconItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 44px;
+}
+
+.iconBoxRecycle,
+.iconBoxFolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+}
+
+.iconLabel {
+  font-size: 7.5px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.taskbarOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  z-index: 3;
+}
+
+.taskbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.startBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.searchMini {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.taskbarCenter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.appIconExplorer {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: #2563EB;
+}
+
+.appIconBrowser {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #D97706;
+}
+
+.appIconAvel {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: #16A34A;
+}
+
+.appIconCode {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: #7C3AED;
+}
+
+.taskbarTray {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trayLang {
+  font-size: 7.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.trayTime {
+  font-size: 8px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  font-variant-numeric: tabular-nums;
+}

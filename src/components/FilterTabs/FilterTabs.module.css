@@ -1,0 +1,55 @@
+.tabsRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 18px;
+  border-bottom: none; /* No decorative full-width divider */
+  height: 32px;
+}
+
+.tabBtn {
+  position: relative;
+  height: 32px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--text-secondary);
+  transition: color 0.15s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.tabBtn:hover {
+  color: var(--text-primary);
+}
+
+.tabBtn.active {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.tabIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px 2px 0 0;
+  animation: tabUnderlineIn 180ms var(--ease-spring);
+}
+
+@keyframes tabUnderlineIn {
+  from {
+    transform: scaleX(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
